@@ -1,0 +1,246 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full viewport height */
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+.nav-container {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-nav, .right-nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.left-nav {
+    flex-grow: 1;
+}
+
+.right-nav {
+    margin-left: auto;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #444;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-container {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        z-index: 1000;
+    }
+
+    .nav-container.open {
+        display: flex;
+    }
+
+    .left-nav, .right-nav {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    .right-nav {
+        margin-left: 0;
+    }
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: auto; /* Ensure footer stays at the bottom */
+}
+
+.trip-card, .package-card {
+    padding: 1rem;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .trip-card, .package-card {
+        font-size: 0.8rem;
+    }
+
+    form input, form button {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* Stack form elements vertically */
+    gap: 1.5rem; /* Add consistent spacing between form elements */
+    max-width: 400px; /* Limit the form's width */
+    margin: 2rem auto; /* Center the form on the page */
+    padding: 2rem;
+    background-color: #fff; /* White background for better contrast */
+    border: 1px solid #ddd; /* Subtle border for the form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+form label {
+    display: flex;
+    flex-direction: column; /* Stack label and input vertically */
+    font-size: 1rem;
+    color: #333;
+}
+
+form select,
+form input {
+    width: 100%; /* Make inputs take full width */
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form select:focus,
+form input:focus {
+    border-color: #0070f3; /* Highlight border on focus */
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 112, 243, 0.5); /* Subtle glow effect */
+}
+
+form button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.75rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #444;
+}
+
+form input[type="checkbox"] {
+    width: auto; /* Keep checkbox compact */
+    margin: 0; /* Remove extra margin */
+}
+
+form label input[type="checkbox"] {
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+form label:last-of-type {
+    display: flex;
+    align-items: center; /* Align checkbox and text inline */
+    gap: 0.5rem; /* Add spacing between the checkbox and the text */
+    font-size: 1rem;
+    color: #333;
+    flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+@media (max-width: 768px) {
+    form {
+        flex-direction: column; /* Stack form elements vertically on smaller screens */
+        align-items: stretch; /* Stretch elements to fit the container */
+    }
+
+    form input, form select, form button {
+        width: 100%; /* Make inputs take full width */
+    }
+}
+
+.home-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: calc(100vh - 120px); /* Adjust for header and footer height */
+    padding: 1rem;
+}
+
+.home-page h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.home-page p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.home-page .view-packages {
+    margin-bottom: 2rem;
+}
+
+/* Center the "Post a Trip" heading */
+.post-trip-page h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+main {
+    flex: 1; /* Push the footer to the bottom */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #333;
+}
